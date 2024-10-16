@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfbi10006mupm"]
+
+[ext_resource type="Script" path="res://Script/trap.gd" id="1_yn6wq"]
+[ext_resource type="Texture2D" uid="uid://dhoyqcco24tkr" path="res://Image/Trap1/peaks_1 ex.png" id="2_2s8jc"]
+[ext_resource type="FontFile" uid="uid://dgja7glviy33l" path="res://Fonts/Green.tres" id="2_fycic"]
+[ext_resource type="AudioStream" uid="uid://iyxgewmdmqpd" path="res://SFX/26_sword_hit_3.wav" id="4_etrne"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0o1g3"]
+font = ExtResource("2_fycic")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tld6y"]
+size = Vector2(64, 64)
+
+[node name="trap" type="Node2D"]
+script = ExtResource("1_yn6wq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(32, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("2_2s8jc")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_top = 48.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "123"
+label_settings = SubResource("LabelSettings_0o1g3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Trap"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_tld6y")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_etrne")
+volume_db = -5.0
+bus = &"SFX"

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bendvu6wy35d1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5u60c"]
+size = Vector2(64, 64)
+
+[node name="Door" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_5u60c")

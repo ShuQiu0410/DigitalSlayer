@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwo8vh63hxsgg"]
+
+[ext_resource type="Texture2D" uid="uid://ddl1wscctos1a" path="res://Image/torch/side_torch_1.png" id="1_w8kff"]
+[ext_resource type="Texture2D" uid="uid://bwat3xjih3lvn" path="res://Image/torch/side_torch_2.png" id="2_svues"]
+[ext_resource type="Texture2D" uid="uid://cua1i4facytul" path="res://Image/torch/side_torch_3.png" id="3_62tl8"]
+[ext_resource type="Texture2D" uid="uid://dcxn5f0a1ex81" path="res://Image/torch/side_torch_4.png" id="4_dq0oe"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebcq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w8kff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_svues")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_62tl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dq0oe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="side_torch" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(32, 32)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_ebcq6")
+autoplay = "default"

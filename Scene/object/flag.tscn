@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0nbdamqdu5q5"]
+
+[ext_resource type="Texture2D" uid="uid://0l4w2845dikp" path="res://Image/flag/flag_1.png" id="1_v174n"]
+[ext_resource type="Texture2D" uid="uid://be23l8iacmygu" path="res://Image/flag/flag_2.png" id="2_5jtri"]
+[ext_resource type="Texture2D" uid="uid://bwp6paoid5di1" path="res://Image/flag/flag_3.png" id="3_farvu"]
+[ext_resource type="Texture2D" uid="uid://ce1vaqhclvexf" path="res://Image/flag/flag_4.png" id="4_a8cdi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvk2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v174n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5jtri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_farvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a8cdi")
+}],
+"loop": true,
+"name": &"defult",
+"speed": 6.0
+}]
+
+[node name="flag" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(32, 32)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_jvk2h")
+animation = &"defult"
+autoplay = "defult"
+frame_progress = 0.849821

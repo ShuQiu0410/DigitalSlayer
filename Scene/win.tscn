@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://caaoofo5wtbh"]
+
+[ext_resource type="Script" path="res://Script/win.gd" id="1_obds6"]
+[ext_resource type="Texture2D" uid="uid://biyrsj35smuld" path="res://Image/UI/UI board Medium  stone.png" id="2_tn8nf"]
+[ext_resource type="Texture2D" uid="uid://p1nybdw7hj74" path="res://Image/UI/IRONY TITLE  empty.png" id="3_dpnqb"]
+[ext_resource type="FontFile" uid="uid://dm0ty0llj8t3r" path="res://Fonts/DungeonFont.ttf" id="4_up8j5"]
+[ext_resource type="Texture2D" uid="uid://dhlgy3s8b33bu" path="res://Image/UI/UI ICONS_WHITE_pixel art_Sprite Sheet.png" id="5_j36m6"]
+[ext_resource type="Texture2D" uid="uid://bp8g77ev4hhlm" path="res://Image/UI/UI ICONS_BLACK_pixel art_Sprite Sheet.png" id="6_3bp4p"]
+[ext_resource type="Texture2D" uid="uid://bsplmgauk5q2a" path="res://Image/UI/001.png" id="7_kqvwr"]
+[ext_resource type="Texture2D" uid="uid://enetih0vhw5g" path="res://Image/UI/001-1.png" id="8_c7cw8"]
+[ext_resource type="Texture2D" uid="uid://c217q2jp3a6ss" path="res://Image/UI/002.png" id="9_upthe"]
+[ext_resource type="Texture2D" uid="uid://cumvpk15tpyua" path="res://Image/UI/002-1.png" id="10_x7s01"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_owyf4"]
+font = ExtResource("4_up8j5")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_anv3u"]
+font = ExtResource("4_up8j5")
+font_size = 108
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_obds6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(17.8882, 9.44026)
+texture = ExtResource("2_tn8nf")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 160.0
+offset_top = -44.0
+offset_right = 554.0
+offset_bottom = 65.0
+texture = ExtResource("3_dpnqb")
+
+[node name="Label" type="Label" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Win"
+label_settings = SubResource("LabelSettings_owyf4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EXIT" type="TextureButton" parent="."]
+offset_left = 100.0
+offset_top = 314.0
+offset_right = 228.0
+offset_bottom = 442.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("5_j36m6")
+texture_pressed = ExtResource("6_3bp4p")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 59.0
+offset_right = 664.0
+offset_bottom = 291.0
+text = "Congratulations"
+label_settings = SubResource("LabelSettings_anv3u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GO" type="TextureButton" parent="."]
+offset_left = 516.0
+offset_top = 302.0
+offset_right = 644.0
+offset_bottom = 430.0
+scale = Vector2(0.9, 0.9)
+texture_normal = ExtResource("7_kqvwr")
+texture_pressed = ExtResource("8_c7cw8")
+
+[node name="RE" type="TextureButton" parent="."]
+offset_left = 312.0
+offset_top = 314.0
+offset_right = 440.0
+offset_bottom = 442.0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("9_upthe")
+texture_pressed = ExtResource("10_x7s01")
+
+[connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="GO" to="." method="_on_go_pressed"]
+[connection signal="pressed" from="RE" to="." method="_on_re_pressed"]

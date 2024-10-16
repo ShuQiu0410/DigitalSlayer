@@ -1,0 +1,274 @@
+[gd_scene load_steps=19 format=3 uid="uid://dckcrc76k3mr"]
+
+[ext_resource type="Texture2D" uid="uid://dfvkhavvvs1bf" path="res://Image/Gear.png" id="1_3yjss"]
+[ext_resource type="FontFile" uid="uid://dm0ty0llj8t3r" path="res://Fonts/DungeonFont.ttf" id="1_hnm3k"]
+[ext_resource type="Script" path="res://Script/start_menu.gd" id="1_xfkuv"]
+[ext_resource type="Texture2D" uid="uid://b64m1hp5pxq3o" path="res://Image/Gamepad3.png" id="2_xlurk"]
+[ext_resource type="Texture2D" uid="uid://baagtxayfq28c" path="res://Image/Document.png" id="4_1wiip"]
+[ext_resource type="Texture2D" uid="uid://bnmyhjcmdjfxv" path="res://Image/Button/TextBTN_Medium.png" id="4_mumhk"]
+[ext_resource type="Texture2D" uid="uid://dpjdjgfpppesa" path="res://Image/Button/TextBTN_Medium_Pressed.png" id="4_vs73j"]
+[ext_resource type="Texture2D" uid="uid://dhlgy3s8b33bu" path="res://Image/UI/UI ICONS_WHITE_pixel art_Sprite Sheet.png" id="5_a8de0"]
+[ext_resource type="Script" path="res://Script/menu_button.gd" id="5_h485f"]
+[ext_resource type="Texture2D" uid="uid://bp8g77ev4hhlm" path="res://Image/UI/UI ICONS_BLACK_pixel art_Sprite Sheet.png" id="6_seuuu"]
+[ext_resource type="PackedScene" uid="uid://bp1aeu0j0rvyk" path="res://Scene/stage_menu.tscn" id="8_wx7m0"]
+[ext_resource type="PackedScene" uid="uid://b2jfg4i36t5w8" path="res://Scene/setting_menu.tscn" id="9_pt5qf"]
+[ext_resource type="PackedScene" uid="uid://d0y7gsvdkni7p" path="res://Scene/how_to_play.tscn" id="13_6rkme"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t7104"]
+font = ExtResource("1_hnm3k")
+font_size = 90
+
+[sub_resource type="ImageTexture" id="ImageTexture_hfl32"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l28bk"]
+font = ExtResource("1_hnm3k")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_ap7d7"]
+font = ExtResource("1_hnm3k")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_ti6md"]
+font = ExtResource("1_hnm3k")
+font_size = 48
+
+[node name="Start_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xfkuv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.101961, 0.0117647, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Digital Slayer"
+label_settings = SubResource("LabelSettings_t7104")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2"]
+visible = false
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+icon = SubResource("ImageTexture_hfl32")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2"]
+custom_minimum_size = Vector2(200, 90)
+layout_mode = 2
+texture_normal = ExtResource("4_mumhk")
+texture_pressed = ExtResource("4_vs73j")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_h485f")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/TextureButton"]
+texture_filter = 1
+layout_mode = 2
+offset_left = -79.0
+offset_top = 5.0
+offset_right = -1.0
+offset_bottom = 83.0
+texture = ExtResource("2_xlurk")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/TextureButton"]
+visible = false
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.4
+offset_left = -201.0
+offset_top = -4.0
+offset_right = -199.0
+texture = ExtResource("4_mumhk")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -15.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_l28bk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer"]
+custom_minimum_size = Vector2(200, 90)
+layout_mode = 2
+texture_normal = ExtResource("4_mumhk")
+texture_pressed = ExtResource("4_vs73j")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_h485f")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings"
+label_settings = SubResource("LabelSettings_ap7d7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer/TextureButton"]
+texture_filter = 1
+layout_mode = 2
+offset_left = -79.0
+offset_top = 5.0
+offset_right = -1.0
+offset_bottom = 83.0
+texture = ExtResource("1_3yjss")
+expand_mode = 2
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer3"]
+custom_minimum_size = Vector2(200, 90)
+layout_mode = 2
+texture_normal = ExtResource("4_mumhk")
+texture_pressed = ExtResource("4_vs73j")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_h485f")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer3/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "How To Play"
+label_settings = SubResource("LabelSettings_ti6md")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer3/TextureButton"]
+texture_filter = 1
+layout_mode = 2
+offset_left = -79.0
+offset_top = 5.0
+offset_bottom = 84.0
+texture = ExtResource("4_1wiip")
+expand_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.937
+anchor_top = 0.889
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.48804
+offset_top = -2.06403
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("5_a8de0")
+texture_hover = ExtResource("6_seuuu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="stage_menu" parent="." instance=ExtResource("8_wx7m0")]
+visible = false
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+offset_left = 76.0
+offset_top = 42.0
+offset_right = 76.0
+offset_bottom = 42.0
+scale = Vector2(0.85, 0.85)
+
+[node name="setting_menu" parent="." instance=ExtResource("9_pt5qf")]
+visible = false
+layout_mode = 1
+offset_left = 88.0
+offset_top = 55.0
+offset_right = 88.0
+offset_bottom = 55.0
+scale = Vector2(0.8, 0.8)
+
+[node name="how_to_play" parent="." instance=ExtResource("13_6rkme")]
+visible = false
+layout_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 553.0
+offset_right = 47.0
+offset_bottom = 576.0
+text = "V1.0.2"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/Button" to="." method="_on_button_pressed_play"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/TextureButton" to="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/TextureButton" to="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/TextureButton" method="_on_button_up"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer2/TextureButton" to="." method="_on_play_pressed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer/TextureButton" to="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer/TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer/TextureButton" to="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer/TextureButton" method="_on_button_up"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer/TextureButton" to="." method="_on_settings_pressed"]
+[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer3/TextureButton" to="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer3/TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer3/TextureButton" to="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer3/TextureButton" method="_on_button_up"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/HSplitContainer3/TextureButton" to="." method="_on_how_to_play_pressed"]
+[connection signal="button_down" from="TextureButton" to="." method="_on_texture_button_button_down"]

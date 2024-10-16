@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgyuynjk7xexf"]
+
+[ext_resource type="Script" path="res://Script/magic_circle.gd" id="1_23tc3"]
+[ext_resource type="Texture2D" uid="uid://ch6en80f5tpw7" path="res://Image/Shadow (default) (1).png" id="1_ds237"]
+[ext_resource type="FontFile" uid="uid://cpgvmxq6nrwt7" path="res://Fonts/PURPLE.tres" id="2_oagnh"]
+
+[sub_resource type="Shader" id="Shader_b8duc"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+
+uniform float glow_strength : hint_range(0.0, 1.0) = 0.7;
+uniform vec4 glow_color = vec4(0.6, 0.2, 0.8, 0.7);
+
+void fragment() {
+    // 获取当前像素的颜色
+    vec4 color = texture(TEXTURE, UV);
+	color.r += 0.6;
+	color.g += 0.3;
+	color.b += 0.5;
+
+    // 计算当前像素是否在边缘
+    float edge_factor = 0.7 - smoothstep(0.45, 0.55, length(UV - vec2(0.5)));
+
+    // 混合原始颜色和辉光颜色
+    COLOR = mix(color, glow_color, edge_factor * glow_strength);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ij7j7"]
+shader = SubResource("Shader_b8duc")
+shader_parameter/glow_strength = 0.5
+shader_parameter/glow_color = Vector4(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5m07m"]
+font = ExtResource("2_oagnh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ollb"]
+size = Vector2(64, 64)
+
+[node name="magic circle" type="Node2D"]
+script = ExtResource("1_23tc3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ij7j7")
+position = Vector2(31.9215, 47.6886)
+rotation = 0.401426
+scale = Vector2(0.822971, 0.822971)
+skew = 0.734784
+texture = ExtResource("1_ds237")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_top = 48.0
+offset_right = 45.0
+offset_bottom = 64.0
+text = "123"
+label_settings = SubResource("LabelSettings_5m07m")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Magic"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_6ollb")

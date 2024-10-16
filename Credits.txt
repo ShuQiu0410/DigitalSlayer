@@ -1,0 +1,28 @@
+Program , Design:
+	ShuQiu
+
+test:
+	zhechi  https://twitter.com/zhechi0319
+
+Arts:
+	2D Pixel Dungeon Asset Pack By Pexel_Poem  https://pixel-poem.itch.io/
+	Rocky Roads By Essssam  https://essssam.itch.io/
+	Forks of Flame By XYEzawr  https://xyezawr.itch.io/
+	Pipoya VFX LightPillar By Pipoya  https://pipoya.itch.io/
+	The Free Archives © Dreams Circle  https://dreams-circle.itch.io/fa-01
+	VFX Free Pack By CodeManu  https://codemanu.itch.io/
+	16x16 Assorted RPG Icons By Shade  https://merchant-shade.itch.io/
+	Tobi’s Magic Circle Hub By Tobi  https://forum.arcaneodyssey.dev/t/tobis-magic-circle-hub/77452
+	Lucky Loops Ultimate Ui Pixelart Icons By Luck  https://lucky-loops.itch.io/ultimate-ui-pixelart-icons  (CC BY4.0)
+	Icons Essential By Crusenoho  https://crusenho.itch.io/icons-essential-pack-free-icons  (CC BY 4.0)
+	Fantasy Wooden GUI By KanekiZLF  https://kanekizlf.itch.io/
+
+Sounds:
+	Minifantasy_Dungeon_SFX By Leohpaz  https://leohpaz.itch.io/
+	200 Free SFX By Kronbits  https://kronbits.itch.io/freesfx
+
+BGMs:
+	Daydream By Shimtone  https://dova-s.jp/bgm/play20244.html
+	
+Fonts:
+	Dungeon Font By Vrtxrry  https://vrtxrry.itch.io/

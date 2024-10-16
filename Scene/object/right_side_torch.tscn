@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ufrf4rbv4lip"]
+
+[ext_resource type="PackedScene" uid="uid://bwo8vh63hxsgg" path="res://Scene/object/left_side_torch.tscn" id="1_klrnx"]
+
+[node name="side_torch" instance=ExtResource("1_klrnx")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+flip_h = true

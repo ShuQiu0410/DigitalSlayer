@@ -1,0 +1,143 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp1aeu0j0rvyk"]
+
+[ext_resource type="Script" path="res://Script/stage_menu.gd" id="1_k3tpj"]
+[ext_resource type="FontFile" uid="uid://dm0ty0llj8t3r" path="res://Fonts/DungeonFont.ttf" id="2_elf5r"]
+[ext_resource type="PackedScene" uid="uid://bjhj0k8sevurg" path="res://Scene/stage_button.tscn" id="3_djrgs"]
+[ext_resource type="Texture2D" uid="uid://dpr1lfegg7gdm" path="res://Image/UI/arrow.png" id="4_4ydvn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ih5vx"]
+font = ExtResource("2_elf5r")
+font_size = 96
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7qv1"]
+font = ExtResource("2_elf5r")
+font_size = 48
+
+[node name="stage_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k3tpj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.239216, 0.145098, 0.231373, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "Stage"
+label_settings = SubResource("LabelSettings_ih5vx")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="1" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_djrgs")]
+layout_mode = 2
+
+[node name="5" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource("3_djrgs")]
+layout_mode = 2
+level = "5"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="2" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("3_djrgs")]
+layout_mode = 2
+level = "2"
+
+[node name="6" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("3_djrgs")]
+layout_mode = 2
+level = "6"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="3" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("3_djrgs")]
+layout_mode = 2
+level = "3"
+
+[node name="7" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("3_djrgs")]
+layout_mode = 2
+level = "7"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="4" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("3_djrgs")]
+layout_mode = 2
+level = "4"
+
+[node name="8" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer4" instance=ExtResource("3_djrgs")]
+layout_mode = 2
+level = "8"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 925.0
+offset_right = 1024.0
+offset_bottom = 49.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Colse"
+label_settings = SubResource("LabelSettings_d7qv1")
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 302.0
+offset_right = 996.0
+offset_bottom = 366.0
+texture_normal = ExtResource("4_4ydvn")
+
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 302.0
+offset_right = 113.0
+offset_bottom = 366.0
+texture_normal = ExtResource("4_4ydvn")
+flip_h = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
